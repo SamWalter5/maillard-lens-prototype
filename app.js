@@ -1,11 +1,12 @@
-// Firebase configuration - Replace with your own Firebase config
+// Firebase configuration
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT_ID.appspot.com",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID"
+    apiKey: "AIzaSyBII51GAaqwOSRePYgtcfXCz3LBsEuipHA",
+    authDomain: "maillard-lens-prototype.firebaseapp.com",
+    projectId: "maillard-lens-prototype",
+    storageBucket: "maillard-lens-prototype.firebasestorage.app",
+    messagingSenderId: "605811625955",
+    appId: "1:605811625955:web:d72d4ee6f33e59c5df5ad6",
+    measurementId: "G-JBJR3MJC0M"
 };
 
 // Initialize Firebase
@@ -15,6 +16,7 @@ import {
     collection, 
     addDoc, 
     getDocs, 
+    getDoc,
     updateDoc, 
     deleteDoc, 
     doc,
@@ -180,17 +182,10 @@ function getRiskClass(risk) {
 window.editProduct = async (id) => {
     try {
         const productRef = doc(db, 'products', id);
-        const productSnap = await getDocs(query(collection(db, 'products')));
+        const productSnap = await getDoc(productRef);
         
-        // Find the product in the snapshot
-        let product = null;
-        productSnap.forEach((doc) => {
-            if (doc.id === id) {
-                product = doc.data();
-            }
-        });
-
-        if (product) {
+        if (productSnap.exists()) {
+            const product = productSnap.data();
             productId.value = id;
             productName.value = product.productName || '';
             proteinSource.value = product.proteinSource || '';
