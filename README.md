@@ -44,7 +44,7 @@ To connect your app to Firebase:
 5. Replace the placeholder config in `app.js` with your actual values
 
 ## Deployed Application
-[Link will be added after deployment]
+https://6ab6ea926eda285cd22f5b16--whimsical-gecko-ec3928.netlify.app/
 
 ## Demo Video
 [Link will be added after recording]
