@@ -47,7 +47,7 @@ To connect your app to Firebase:
 https://6ab6ea926eda285cd22f5b16--whimsical-gecko-ec3928.netlify.app/
 
 ## Demo Video
-[Link will be added after recording]
+https://youtu.be/HaMQLj90Xzg
 
 ## Project Structure
 ```
