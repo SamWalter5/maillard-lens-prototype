@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maillard Lens Prototype</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Maillard Lens Prototype</h1>
+            <p>Food Product Browning Information</p>
+        </header>
+
+        <main>
+            <section class="products-section">
+                <div class="section-header">
+                    <h2>Food Products</h2>
+                    <button id="addProductBtn" class="btn btn-primary">+ Add Product</button>
+                </div>
+
+                <div id="productFormContainer" class="form-container hidden">
+                    <h3 id="formTitle">Add New Product</h3>
+                    <form id="productForm">
+                        <input type="hidden" id="productId">
+                        
+                        <div class="form-group">
+                            <label for="productName">Product Name *</label>
+                            <input type="text" id="productName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="proteinSource">Protein Source</label>
+                            <input type="text" id="proteinSource" placeholder="e.g., Whey, Soy, Pea">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reducingSugar">Reducing Sugar</label>
+                            <input type="text" id="reducingSugar" placeholder="e.g., Glucose, Fructose, Lactose">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sweetenerType">Sweetener Type</label>
+                            <input type="text" id="sweetenerType" placeholder="e.g., Natural Sugar, Sugar Alcohol">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="browningRisk">Browning Risk</label>
+                            <select id="browningRisk">
+                                <option value="">Select Risk Level</option>
+                                <option value="Low">Low</option>
+                                <option value="Moderate">Moderate</option>
+                                <option value="High">High</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notes">Notes</label>
+                            <textarea id="notes" rows="3" placeholder="Optional notes..."></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Save Product</button>
+                            <button type="button" id="cancelBtn" class="btn btn-secondary">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="productsList" class="products-list">
+                    <!-- Products will be displayed here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
